@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import os
 
 app = Flask(__name__)
 
@@ -7,17 +8,19 @@ def home():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Obtém a porta do ambiente (se não definida, usa 5000)
+    port = int(os.environ.get('PORT', 5000))  # Usa a variável de ambiente PORT, se disponível
+    # Executa o Flask na porta correta e aceita conexões de qualquer IP
+    app.run(debug=True, host='0.0.0.0', port=port)
 
 # Criando o diretório 'templates' e adicionando o arquivo HTML
-import os
 os.makedirs('templates', exist_ok=True)
 html_content = """
 <!DOCTYPE html>
-<html lang=\"pt-br\">
+<html lang="pt-br">
 <head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Minha Namorada</title>
     <style>
         body {
@@ -48,7 +51,7 @@ html_content = """
 </head>
 <body>
     <h1>Eu te amo demais! ❤️</h1>
-    <img src=\"/static/foto.jpg\" alt=\"Nossa foto juntos\">
+    <img src="/static/foto.jpg" alt="Nossa foto juntos">
     <script>
         function createHeart() {
             const heart = document.createElement('div');
