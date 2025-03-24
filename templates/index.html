@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Minha Namorada</title>
+    <style>
+        body {
+            background-color: black; /* Fundo preto */
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            color: white; /* Texto branco para contraste com o fundo */
+        }
+        h1 {
+            color: red;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        img {
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.8;
+            animation: fall 5s infinite linear;
+        }
+        @keyframes fall {
+            0% {
+                top: -30px;
+                opacity: 1;
+            }
+            100% {
+                top: 100vh;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Eu te amo demais! ❤️</h1>
+    <img src="/static/foto.jpg" alt="Nossa foto juntos">
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = '❤️'; // Emoji de coração
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's'; // variação na duração da animação
+            document.body.appendChild(heart);
+
+            // Remover o coração após ele sumir
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        // Criação de corações a cada 300ms
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
