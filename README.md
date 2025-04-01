@@ -1,6 +1,6 @@
 # 💖 Site Namorada
 
-Este é um site simples e romântico desenvolvido com Python, HTML, CSS e JavaScript. O site exibe uma mensagem especial acompanhada de efeitos visuais para deixar o momento ainda mais especial.
+Este é um site simples e romântico desenvolvido com Python, HTML, CSS e JavaScript. Estou testando algumas funcionalidades e fiz este site teste para enviar para minha namorada. O site exibe uma mensagem especial acompanhada de efeitos visuais para deixar o momento ainda mais especial.
 
 ## 📌 Funcionalidades
 - Exibe uma mensagem personalizada para a namorada.
